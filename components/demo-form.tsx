@@ -78,8 +78,8 @@ export function DemoForm() {
         <h2 className="mb-4 text-2xl font-bold">提交成功！</h2>
         <p className="mb-4 text-muted-foreground">感谢您的关注！我们的专家将在24小时内与您联系，为您安排产品演示。</p>
         <div className="mb-6 rounded-lg bg-green-50 p-4 text-sm text-green-800">
-          <p className="font-medium">🎯 飞书集成说明</p>
-          <p>当前演示环境未配置飞书API，实际部署后数据将自动同步到飞书多维表格。</p>
+          <p className="font-medium">🎯 飞书群通知已发送</p>
+          <p>您的预约信息已通过飞书群机器人发送给我们的专家团队，我们将尽快与您联系安排产品演示。</p>
         </div>
         <Button onClick={() => setSubmitted(false)} variant="outline">
           提交另一个请求

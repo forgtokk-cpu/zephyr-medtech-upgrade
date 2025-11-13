@@ -56,7 +56,7 @@ export function Footer() {
             <h3 className="mb-4 font-semibold">联系我们</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li className="whitespace-nowrap">邮箱：{site.contact.email}</li>
-              <li>电话：{site.contact.phone}</li>
+
               <li>地址：{site.contact.address}</li>
             </ul>
           </div>

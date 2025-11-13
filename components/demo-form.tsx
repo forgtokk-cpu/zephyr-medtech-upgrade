@@ -12,6 +12,7 @@ import { CheckCircle2 } from "lucide-react"
 
 export function DemoForm() {
   const [submitted, setSubmitted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
     company: "",
@@ -22,11 +23,43 @@ export function DemoForm() {
     message: "",
   })
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Here you would typically send the form data to your backend
-    console.log("Form submitted:", formData)
-    setSubmitted(true)
+    
+    try {
+      setIsSubmitting(true)
+      
+      const response = await fetch('/api/demo-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      })
+
+      const result = await response.json()
+      
+      if (result.success) {
+        setSubmitted(true)
+        // 重置表单
+        setFormData({
+          name: "",
+          company: "",
+          position: "",
+          email: "",
+          phone: "",
+          service: "",
+          message: "",
+        })
+      } else {
+        alert(`提交失败: ${result.error}`)
+      }
+    } catch (error) {
+      console.error('表单提交错误:', error)
+      alert('提交失败，请稍后重试')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -43,7 +76,11 @@ export function DemoForm() {
           <CheckCircle2 className="h-8 w-8 text-primary" />
         </div>
         <h2 className="mb-4 text-2xl font-bold">提交成功！</h2>
-        <p className="mb-6 text-muted-foreground">感谢您的关注！我们的专家将在24小时内与您联系，为您安排产品演示。</p>
+        <p className="mb-4 text-muted-foreground">感谢您的关注！我们的专家将在24小时内与您联系，为您安排产品演示。</p>
+        <div className="mb-6 rounded-lg bg-green-50 p-4 text-sm text-green-800">
+          <p className="font-medium">🎯 飞书集成说明</p>
+          <p>当前演示环境未配置飞书API，实际部署后数据将自动同步到飞书多维表格。</p>
+        </div>
         <Button onClick={() => setSubmitted(false)} variant="outline">
           提交另一个请求
         </Button>
@@ -156,8 +193,8 @@ export function DemoForm() {
 
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <p className="text-sm text-muted-foreground">* 为必填项</p>
-          <Button type="submit" size="lg" className="w-full sm:w-auto">
-            提交预约
+          <Button type="submit" size="lg" className="w-full sm:w-auto" disabled={isSubmitting}>
+            {isSubmitting ? '提交中...' : '提交预约'}
           </Button>
         </div>
       </form>

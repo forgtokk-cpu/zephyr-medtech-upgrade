@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: site.brandName,
   description: site.tagline,
   icons: { icon: '/logo.png' },
+  metadataBase: new URL('https://www.zephyrmedtech.com'),
   openGraph: {
     title: site.brandName,
     description: site.tagline,

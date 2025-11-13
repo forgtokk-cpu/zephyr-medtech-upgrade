@@ -6,6 +6,12 @@ import Link from "next/link"
 import Image from "next/image"
 import { SectionBlock } from "@/components/section-block"
 import { getService } from "@/content/services"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'AI文档撰写 - 医疗器械专业文档智能生成 | Zephyr MedTech',
+  description: '面向临床、研发、准入、市场场景下各类文档的智能撰写与结构化输出，提升团队协作效率。提供章节模板、术语库引用、格式规范校验和自动化报告生成。',
+}
 
 export default function AuthoringPage() {
   const service = getService('authoring')

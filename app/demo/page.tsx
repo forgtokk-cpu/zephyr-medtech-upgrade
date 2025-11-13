@@ -1,6 +1,23 @@
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { DemoForm } from "@/components/demo-form"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "预约产品演示 - 体验Zephyr MedTech AI医疗解决方案 | Zephyr MedTech",
+  description: "预约Zephyr MedTech产品演示，了解我们的AI合规管理、文档撰写、医学翻译、数据分析解决方案如何助力医疗器械企业提效。专业团队24小时内联系您。",
+  keywords: ["产品演示", "AI医疗解决方案", "医疗器械AI", "预约演示", "企业AI解决方案", "医疗科技演示"],
+  openGraph: {
+    title: "预约产品演示 - 体验Zephyr MedTech AI医疗解决方案",
+    description: "预约Zephyr MedTech产品演示，了解我们的AI合规管理、文档撰写、医学翻译、数据分析解决方案如何助力医疗器械企业提效。",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "预约产品演示 - 体验Zephyr MedTech AI医疗解决方案 | Zephyr MedTech",
+    description: "预约Zephyr MedTech产品演示，了解我们的AI解决方案如何助力医疗器械企业提效。专业团队24小时内联系您。",
+  },
+}
 
 export default function DemoPage() {
   return (

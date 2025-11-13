@@ -6,6 +6,23 @@ import Link from "next/link"
 import Image from "next/image"
 import { SectionBlock } from "@/components/section-block"
 import { getService } from "@/content/services"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "AI数据分析服务 - 基于海关出口与监管数据的智能可视化分析 | Zephyr MedTech",
+  description: "Zephyr MedTech提供AI数据分析服务，基于上市前准入、海关出口、上市后监管数据进行智能分析与可视化洞察，辅助医疗器械企业决策优化。",
+  keywords: ["AI数据分析", "医疗器械数据", "海关出口数据", "监管数据分析", "数据可视化", "商业智能", "数据驱动决策"],
+  openGraph: {
+    title: "AI数据分析服务 - 基于海关出口与监管数据的智能可视化分析",
+    description: "Zephyr MedTech提供AI数据分析服务，基于上市前准入、海关出口、上市后监管数据进行智能分析与可视化洞察，辅助企业决策优化。",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI数据分析服务 - 基于海关出口与监管数据的智能可视化分析 | Zephyr MedTech",
+    description: "Zephyr MedTech提供AI数据分析服务，基于上市前准入、海关出口、上市后监管数据进行智能分析与可视化洞察。",
+  },
+}
 
 export default function AnalyticsPage() {
   const service = getService('analytics')

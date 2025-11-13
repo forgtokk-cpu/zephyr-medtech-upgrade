@@ -6,6 +6,23 @@ import Link from "next/link"
 import Image from "next/image"
 import { SectionBlock } from "@/components/section-block"
 import { getService } from "@/content/services"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "AI医学翻译服务 - 千万级专业医学语料支撑的多语言智能翻译 | Zephyr MedTech",
+  description: "Zephyr MedTech提供专业AI医学翻译服务，基于千万级医学语料库，支持多语言智能翻译，高质量排版还原，降低人工翻译成本，助力医疗器械企业全球化发展。",
+  keywords: ["AI医学翻译", "医疗器械翻译", "医学术语翻译", "多语言翻译", "医学语料库", "翻译服务", "医疗器械国际化"],
+  openGraph: {
+    title: "AI医学翻译服务 - 千万级专业医学语料支撑的多语言智能翻译",
+    description: "Zephyr MedTech提供专业AI医学翻译服务，基于千万级医学语料库，支持多语言智能翻译，高质量排版还原，降低人工翻译成本。",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI医学翻译服务 - 千万级专业医学语料支撑的多语言智能翻译 | Zephyr MedTech",
+    description: "Zephyr MedTech提供专业AI医学翻译服务，基于千万级医学语料库，支持多语言智能翻译，高质量排版还原。",
+  },
+}
 
 export default function TranslationPage() {
   const service = getService('translation')

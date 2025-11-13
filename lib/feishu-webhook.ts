@@ -61,13 +61,14 @@ class FeishuWebhookAPI {
 
   /**
    * 生成签名（用于安全校验）
+   * 飞书webhook签名规则：将timestamp + "\n" + 密钥当做签名字符串，使用HmacSHA256算法计算签名，再进行Base64编码
    */
   private generateSign(timestamp: string): string {
     if (!this.config.secret) return ''
     
     const crypto = require('crypto')
-    const hmac = crypto.createHmac('sha256', this.config.secret)
-    hmac.update(`${timestamp}\n${this.config.secret}`)
+    const stringToSign = `${timestamp}\n${this.config.secret}`
+    const hmac = crypto.createHmac('sha256', stringToSign)
     return hmac.digest('base64')
   }
 
@@ -174,7 +175,8 @@ class FeishuWebhookAPI {
    */
   async sendFormNotification(formData: FormData, useInteractive: boolean = true): Promise<boolean> {
     try {
-      const timestamp = Date.now().toString()
+      // 飞书webhook要求时间戳为秒级，不是毫秒级
+      const timestamp = Math.floor(Date.now() / 1000).toString()
       const message = useInteractive 
         ? this.createInteractiveMessage(formData)
         : this.createTextMessage(formData)

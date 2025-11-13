@@ -10,7 +10,7 @@ export const site = {
     email: 'info@zephyrmedtech.com',
     address: '中国 · 深圳',
   },
-  tagline: '巽沐风泽医疗科技 - 专注于医疗器械企业AI提效解决方案',
+  tagline: '专注于创新医疗设备与智慧医疗服务：医疗科技解决方案 | Zephyr MedTech',
   icp: '粤ICP备2025407443号',
   clients: [
     { src: '/clients_logo_1.png', alt: 'Client A' },

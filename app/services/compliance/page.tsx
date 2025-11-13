@@ -6,6 +6,12 @@ import Link from "next/link"
 import Image from "next/image"
 import { SectionBlock } from "@/components/section-block"
 import { getService } from "@/content/services"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: 'AI合规管理 - 医疗器械全球准入智能解决方案 | Zephyr MedTech',
+  description: '覆盖全球70+国家/地区医疗器械准入路径，智能规划与管理，加速产品注册与上市。提供法规条款匹配、术语一致性、风险提示和生成合规清单等专业服务。',
+}
 
 export default function CompliancePage() {
   const service = getService('compliance')

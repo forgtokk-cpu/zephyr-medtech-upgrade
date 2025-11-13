@@ -46,22 +46,13 @@ export async function POST(request: NextRequest) {
       webhookError = webhookErrorObj instanceof Error ? webhookErrorObj.message : '群通知发送失败'
     }
 
-    if (webhookSuccess) {
-      return NextResponse.json({
-        success: true,
-        message: '表单提交成功！群通知已发送',
-        webhookSuccess: true
-      })
-    } else {
-      return NextResponse.json(
-        { 
-          success: false, 
-          error: webhookError || '群通知发送失败，请稍后重试',
-          webhookSuccess: false
-        },
-        { status: 500 }
-      )
-    }
+    // 返回结果，包含webhook状态信息
+    return NextResponse.json({
+      success: true,
+      message: webhookSuccess ? '表单提交成功！群通知已发送' : '表单提交成功！但群通知发送失败',
+      webhookSuccess,
+      webhookError: webhookError || undefined
+    })
   } catch (error) {
     console.error('API处理错误:', error)
     return NextResponse.json(

@@ -5,6 +5,23 @@ import { Button } from "@/components/ui/button"
 import { Target, Lightbulb, Heart, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import { about } from "@/content/about"
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "关于我们 - Zephyr MedTech：专注于创新医疗设备与智慧医疗服务 | Zephyr MedTech",
+  description: "了解Zephyr MedTech如何通过AI技术为医疗器械企业提供合规管理、文档撰写、医学翻译、数据分析等智慧医疗解决方案，助力医疗行业数字化转型。",
+  keywords: ["关于我们", "Zephyr MedTech", "医疗科技公司", "AI医疗解决方案", "智慧医疗", "医疗器械AI", "医疗数字化转型"],
+  openGraph: {
+    title: "关于我们 - Zephyr MedTech：专注于创新医疗设备与智慧医疗服务",
+    description: "了解Zephyr MedTech如何通过AI技术为医疗器械企业提供智慧医疗解决方案，助力医疗行业数字化转型。",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "关于我们 - Zephyr MedTech：专注于创新医疗设备与智慧医疗服务 | Zephyr MedTech",
+    description: "了解Zephyr MedTech如何通过AI技术为医疗器械企业提供智慧医疗解决方案。",
+  },
+}
 
 export default function AboutPage() {
   return (

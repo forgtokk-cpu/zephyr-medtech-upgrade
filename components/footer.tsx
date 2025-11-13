@@ -21,7 +21,7 @@ export function Footer() {
               <span className="text-xl font-bold">{site.brandName}</span>
             </div>
             <p className="mb-4 text-sm text-muted-foreground text-pretty">{site.tagline}</p>
-            <p className="text-sm text-muted-foreground">让AI技术赋能医疗器械行业，助力企业高效发展</p>
+            <p className="text-sm text-muted-foreground">专注医疗器械行业，用AI技术助力企业提升效率、降低成本、加速全球化进程</p>
           </div>
 
           {/* Quick Links */}

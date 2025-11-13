@@ -10,14 +10,14 @@ export const site = {
     email: 'info@zephyrmedtech.com',
     address: '中国 · 深圳',
   },
-  tagline: '专注于创新医疗设备与智慧医疗服务：医疗科技解决方案 | Zephyr MedTech',
+  tagline: 'Zephyr MedTech - 医疗器械行业AI解决方案专家',
   icp: '粤ICP备2025407443号',
   clients: [
-    { src: '/clients_logo_1.png', alt: 'Client A' },
-    { src: '/clients_logo_2.png', alt: 'Client B' },
-    { src: '/clients_logo_3.png', alt: 'Client C' },
-    { src: '/clients_logo_4.png', alt: 'Client D' },
-    { src: '/clients_logo_5.png', alt: 'Client E' },
+    { src: '/clients_logo_1.png', alt: '医疗器械企业A' },
+    { src: '/clients_logo_2.png', alt: '医疗器械企业B' },
+    { src: '/clients_logo_3.png', alt: '医疗器械企业C' },
+    { src: '/clients_logo_4.png', alt: '医疗器械企业D' },
+    { src: '/clients_logo_5.png', alt: '医疗器械企业E' },
   ],
 }
 

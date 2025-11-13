@@ -3,7 +3,7 @@ export const home = {
   heroTitlePrimary: '赋能医疗器械企业',
   heroTitleGradient: 'AI驱动的效率革命',
   heroDescription:
-    '为医疗器械企业提供专业的AI翻译、文档审核和市场调研解决方案， 助力您的产品快速进入全球市场，提升运营效率',
+    '为医疗器械企业提供专业的AI翻译、文档撰写、合规管理和数据分析解决方案，助力您的产品快速进入全球市场，提升运营效率',
   ctaPrimary: { label: '预约演示', href: '/demo' },
   ctaSecondary: { label: '了解解决方案', href: '/services' },
   metrics: [
